@@ -62,7 +62,7 @@ namespace VLC
 
             Title.Content = System.IO.Path.GetFileName(path);
             
-
+            //xd
         }
         
 
