@@ -9,12 +9,15 @@
         Title="VLCrocejdl" Height="450" Width="800">
     <Grid>
         <wpf:VlcControl Margin="0,0,0,80" x:Name="vlcPlayer" ChildChanged="VlcPlayer_ChildChanged" />
-        <Button Content="Play" HorizontalAlignment="Left" Margin="25,0,10,10" VerticalAlignment="Bottom" Height="20" Width="75" Click="Button_Play"/>
+        <Button x:Name="PlayButton" Content="Pause" HorizontalAlignment="Left" Margin="25,0,10,10" VerticalAlignment="Bottom" Height="20" Width="75" Click="Button_Play"/>
         <Button Content="Stop" HorizontalAlignment="Left" Margin="125,0,10,10" VerticalAlignment="Bottom" Height="20" Width="75" Click="Button_Stop"/>
-        <Button Content="B" HorizontalAlignment="Left" Margin="225,0,10,10" VerticalAlignment="Bottom" Height="20" Width="75" />
-        <Slider x:Name="TimeChanger" Minimum="0" Margin="0,0,0,40" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="600" ValueChanged="Slider_Time" />
+        <Button Content="-5" HorizontalAlignment="Center" Margin="0,0,175,10" VerticalAlignment="Bottom" Height="20" Width="75" Click="Button_PretocZpet" />
+        <Button Content="30" HorizontalAlignment="Center" Margin="0,0,-175,10" VerticalAlignment="Bottom" Height="20" Width="75" Click="Button_PretocDopredu" />
+        <Button Content="Open" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Bottom" Height="20" Width="75" Click="Button_OpenVideo" />
+        <Slider x:Name="TimeChanger" Value="{Binding time}" Minimum="0" Margin="0,0,0,40" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="600" ValueChanged="Slider_Time" />
         <Slider x:Name="VolumeChanger" Value="{Binding volume}"  Margin="0,0,25,10" Minimum="0" Maximum="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="150" ValueChanged="Slider_Volume" />
-        <Label x:Name="Time" Content="{Binding time}" HorizontalAlignment="Right" Margin="0,0,50,40" VerticalAlignment="Bottom"/>
+        <Label x:Name="TimeEnd" Content="{Binding time}" HorizontalAlignment="Right" Margin="0,0,50,40" VerticalAlignment="Bottom"/>
+        <Label x:Name="TimeCurrent" Content="{Binding time}" HorizontalAlignment="Left" Margin="50,0,0,40" VerticalAlignment="Bottom"/>
         <Label x:Name="Title" Content="VideoName" HorizontalAlignment="Center" Margin="0,0,0,55" VerticalAlignment="Bottom"/>
 
     </Grid>
